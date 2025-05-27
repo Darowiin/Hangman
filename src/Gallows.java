@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Gallows {
-    public static void printGallows(int numErrors) {
-        switch (numErrors) {
-            case 0:
-                System.out.println("""
+    private static final List<String> gallows = new ArrayList<>();
+    static {
+        gallows.add("""
                           +---+
                           |   |
                               |
@@ -10,10 +12,7 @@ public class Gallows {
                               |
                               |
                         =========''']""");
-                System.out.println("Errors count: " + numErrors);
-                break;
-            case 1:
-                System.out.println("""
+        gallows.add("""
                           +---+
                           |   |
                           O   |
@@ -21,10 +20,7 @@ public class Gallows {
                               |
                               |
                         =========''']""");
-                System.out.println("Errors count: " + numErrors);
-                break;
-            case 2:
-                System.out.println("""
+        gallows.add("""
                           +---+
                           |   |
                           O   |
@@ -32,10 +28,7 @@ public class Gallows {
                               |
                               |
                         =========''']""");
-                System.out.println("Errors count: " + numErrors);
-                break;
-            case 3:
-                System.out.println("""
+        gallows.add("""
                           +---+
                           |   |
                           O   |
@@ -43,10 +36,7 @@ public class Gallows {
                               |
                               |
                         =========''']""");
-                System.out.println("Errors count: " + numErrors);
-                break;
-            case 4:
-                System.out.println("""
+        gallows.add("""
                           +---+
                           |   |
                           O   |
@@ -54,10 +44,7 @@ public class Gallows {
                               |
                               |
                         =========''']""");
-                System.out.println("Errors count: " + numErrors);
-                break;
-            case 5:
-                System.out.println("""
+        gallows.add("""
                           +---+
                           |   |
                           O   |
@@ -65,10 +52,7 @@ public class Gallows {
                          /    |
                               |
                         =========''']""");
-                System.out.println("Errors count: " + numErrors);
-                break;
-            case 6:
-                System.out.println("""
+        gallows.add("""
                           +---+
                           |   |
                           O   |
@@ -76,8 +60,9 @@ public class Gallows {
                          / \\  |
                               |
                         =========''']""");
-                System.out.println("Errors count: " + numErrors);
-                break;
-        }
+    }
+    public static void printGallows(int numErrors) {
+        System.out.println("Errors count: " + numErrors);
+        System.out.println(gallows.get(numErrors));
     }
 }
